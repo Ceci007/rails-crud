@@ -10,5 +10,12 @@
   <%= @post.body %>
 </p>
 
+<div id="comments">
+  <h2>Comments</h2>
+  <%= render @post.comments %>
+  <p>Add a comment</p> 
+  <%= render partial: "comments/form", locals: {comment: @post.comments.new} %>
+</div>
+
 <%= link_to 'Edit', edit_post_path(@post) %> |
 <%= link_to 'Back', posts_path %>
